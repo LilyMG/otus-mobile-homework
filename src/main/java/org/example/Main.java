@@ -2,6 +2,7 @@ package org.example;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -12,7 +13,8 @@ import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
 
 public class Main {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(PLATFORM_NAME, "Android");
         desiredCapabilities.setCapability(DEVICE_NAME, "emulator-5554");
@@ -26,6 +28,5 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        System.out.println("Hello world!");
     }
 }
