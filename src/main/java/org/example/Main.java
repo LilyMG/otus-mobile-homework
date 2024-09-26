@@ -18,7 +18,7 @@ public class Main {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(PLATFORM_NAME, "Android");
         desiredCapabilities.setCapability(DEVICE_NAME, "emulator-5554");
-        desiredCapabilities.setCapability(APP, "/Users/lilittevosyan/Documents/dev/autoProjects/otus-mobile-no-5/src/main/resources/app-debug.apk");
+        desiredCapabilities.setCapability(APP, "/Users/lilittevosyan/Documents/dev/autoProjects/otus-mobile-no-5/src/main/resources/app.apk");
         desiredCapabilities.setCapability(AUTOMATION_NAME, "UiAutomator2");
 
         AppiumDriver<MobileElement> driver;
