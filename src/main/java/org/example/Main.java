@@ -1,13 +1,14 @@
 package org.example;
 
-import drivers.DriverFactory;
+import extensions.AppiumExtension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+@ExtendWith({AppiumExtension.class})
 public class Main {
-
     @Test
     public void test() {
-        DriverFactory.getAndroidDriver();
-
+//        DriverFactory.getAndroidDriver();
+        System.out.println("hello");
     }
 }
