@@ -1,6 +1,9 @@
 package extensions;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import drivers.DriverFactory;
+import modules.PageGuiceModule;
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
