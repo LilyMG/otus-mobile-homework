@@ -8,7 +8,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class Main {
     @Test
     public void test() {
-//        DriverFactory.getAndroidDriver();
         System.out.println("hello");
     }
 }
