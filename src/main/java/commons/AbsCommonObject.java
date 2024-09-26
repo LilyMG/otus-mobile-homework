@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class AbsCommonObject<T> {
 
-    protected AppiumDriver<MobileElement> driver;
+    protected AppiumDriver driver;
 
-    public AbsCommonObject(AppiumDriver<MobileElement> driver) {
+    public AbsCommonObject(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
