@@ -9,24 +9,24 @@ import pages.base.BannerPage;
 import providers.AppiumDriverProvider;
 
 public class AppiumModule extends AbstractModule {
-    private final String platform;
-
-
-    public AppiumModule(String platform) {
-        this.platform = platform;
-    }
-
+//    private final String platform;
+//
+//
+//    public AppiumModule(String platform) {
+//        this.platform = platform;
+//    }
+//
     @Override
     protected void configure() {
-        bind(AppiumDriver.class).toProvider(AppiumDriverProvider.class);
-        bind(String.class).toInstance(platform);
-        bind(BannerPage.class);
+//        bind(AppiumDriver.class).toProvider(AppiumDriverProvider.class);
+//        bind(String.class).toInstance(platform);
+//        bind(BannerPage.class);
     }
 
 
     @Provides
     public AppiumDriver getDriver() {
-        AppiumDriverProvider appiumDriverProvider = new AppiumDriverProvider("android");
+        AppiumDriverProvider appiumDriverProvider = new AppiumDriverProvider();
         return appiumDriverProvider.get();
     }
 

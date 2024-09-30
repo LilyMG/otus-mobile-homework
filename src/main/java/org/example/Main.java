@@ -11,7 +11,7 @@ import pages.base.BannerPage;
 
 //@ExtendWith({UIExtensions.class})
 public class Main {
-    Injector injector = Guice.createInjector(new AppiumModule("android"));
+    Injector injector = Guice.createInjector(new AppiumModule());
     @Inject
     BannerPage bannerPage = injector.getInstance(BannerPage.class);
 

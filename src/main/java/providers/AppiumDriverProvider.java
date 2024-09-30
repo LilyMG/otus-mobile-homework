@@ -16,31 +16,20 @@ import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
 
 public class AppiumDriverProvider implements Provider<AppiumDriver> {
 
-    private final String platform;
 
     @Inject
-    public AppiumDriverProvider(String platform) {
-        this.platform = platform;
+    public AppiumDriverProvider() {
     }
 
     @Override
     public AppiumDriver get() {
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            if ("android".equalsIgnoreCase(platform)) {
-                capabilities.setCapability(PLATFORM_NAME, "Android");
-                capabilities.setCapability(DEVICE_NAME, "emulator-5554");
-                capabilities.setCapability(APP, "/Users/lilittevosyan/Documents/dev/autoProjects/otus-mobile-no-5/src/main/resources/app.apk");
-                capabilities.setCapability(AUTOMATION_NAME, "UiAutomator2");
-                return new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-            } else if ("ios".equalsIgnoreCase(platform)) {
-                capabilities.setCapability("platformName", "iOS");
-                capabilities.setCapability("deviceName", "YourDeviceName");
-                capabilities.setCapability("app", "path/to/your/app.app");
-                return new IOSDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-            } else {
-                throw new IllegalArgumentException("Platform not supported: " + platform);
-            }
+            capabilities.setCapability(PLATFORM_NAME, "Android");
+            capabilities.setCapability(DEVICE_NAME, "emulator-5554");
+            capabilities.setCapability(APP, "/Users/lilittevosyan/Documents/dev/autoProjects/otus-mobile-no-5/src/main/resources/app.apk");
+            capabilities.setCapability(AUTOMATION_NAME, "UiAutomator2");
+            return new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException("Failed to create Appium driver", e);
         }
