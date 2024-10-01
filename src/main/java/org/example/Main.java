@@ -15,7 +15,7 @@ public class Main {
 
     @Test
     public void testAndroidTap() {
-//        SelenideAppium.launchApp();
+        mainPage.open();
 
         System.out.println(mainPage.toString());
     }

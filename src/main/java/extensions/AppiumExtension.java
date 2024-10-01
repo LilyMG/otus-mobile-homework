@@ -11,6 +11,7 @@ public class AppiumExtension implements BeforeEachCallback {
 
     @Override
     public void beforeEach(ExtensionContext context) {
+        Configuration.timeout = 10000;
         Configuration.browserSize = null;
         Configuration.browser = SelenideWebDriver.class.getName();
         Guice.createInjector(new GuiceModule()).injectMembers(context.getTestInstance().get());
