@@ -32,8 +32,8 @@ public class AppiumModule extends AbstractModule {
 
 
     @Provides
-    public BannerPage provideBannerPage(AppiumDriver driver) {
-        return new BannerPage(driver);
+    public BannerPage provideBannerPage() {
+        return new BannerPage(getDriver());
     }
 
 }
