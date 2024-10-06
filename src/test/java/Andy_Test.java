@@ -16,7 +16,7 @@ public class Andy_Test {
 
     /**
      * test case checks visibility of skip button
-     * <p>
+     *
      * open application
      * check if skip button is invisible
      * click on next button until it reaches the end (get from helper how any banners user should see)
@@ -32,6 +32,26 @@ public class Andy_Test {
             mainPage.clickOnNext();
         }
         mainPage.isSkipVisible(true);
+    }
+
+
+    /**
+     * test case checks visibility of alert dialog
+     *
+     * open application
+     * check if skip button is invisible
+     * click on next button until it reaches the end (get from helper how any banners user should see)
+     * check if skip button is visible
+     */
+    @Test
+    public void checkVisibilityOfAlertDialog() {
+        //TODO here we need a helper to get how many banners are shown to the user to make clicks accordingly
+        int amountOfPages = 3;
+        mainPage.open();
+        for (int i = 0; i < amountOfPages - 1; i++) {
+            mainPage.clickOnNext();
+        }
+
     }
 
 }
