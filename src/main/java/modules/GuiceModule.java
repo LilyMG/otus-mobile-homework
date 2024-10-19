@@ -5,6 +5,7 @@ import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import pages.AlertDialog;
 import pages.MainPage;
+import pages.MessagesPage;
 
 public class GuiceModule extends AbstractModule {
 
@@ -18,5 +19,11 @@ public class GuiceModule extends AbstractModule {
     @Provides
     public AlertDialog createDialog() {
         return new AlertDialog();
+    }
+
+    @Singleton
+    @Provides
+    public MessagesPage createMessagesPage() {
+        return new MessagesPage();
     }
 }
