@@ -16,7 +16,7 @@ public class SelenideWebDriver implements WebDriverProvider {
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
-        File app = new File("/Users/lilittevosyan/Documents/dev/autoProjects/otus-mobile-no-5/src/main/resources/app.apk");
+        File app =  new File("src/main/resources/app.apk");
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);

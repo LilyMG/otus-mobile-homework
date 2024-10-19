@@ -16,7 +16,6 @@ public class Andy_Test {
 
     /**
      * test case checks visibility of skip button
-     *
      * open application
      * check if skip button is invisible
      * click on next button until it reaches the end (get from helper how any banners user should see)
@@ -37,11 +36,11 @@ public class Andy_Test {
 
     /**
      * test case checks visibility of alert dialog
-     *
      * open application
      * check if skip button is invisible
      * click on next button until it reaches the end (get from helper how any banners user should see)
-     * check if skip button is visible
+     * click on skip button
+     * check if alert dialog is present
      */
     @Test
     public void checkVisibilityOfAlertDialog() {
@@ -51,6 +50,7 @@ public class Andy_Test {
         for (int i = 0; i < amountOfPages - 1; i++) {
             mainPage.clickOnNext();
         }
+        mainPage.clickOnSkip();
 
     }
 
