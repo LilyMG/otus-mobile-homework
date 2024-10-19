@@ -2,17 +2,18 @@ import com.google.inject.Inject;
 import extensions.AppiumExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import pages.AlertDialog;
 import pages.MainPage;
-
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
 @ExtendWith(AppiumExtension.class)
 
-public class Andy_Test {
+public class Banner_Test {
 
     @Inject
     private MainPage mainPage;
+    @Inject
+    private AlertDialog dialog;
 
     /**
      * test case checks visibility of skip button
@@ -51,7 +52,7 @@ public class Andy_Test {
             mainPage.clickOnNext();
         }
         mainPage.clickOnSkip();
-
+        dialog.messageIs("Failed to get push token for push notification!");
     }
 
 }
