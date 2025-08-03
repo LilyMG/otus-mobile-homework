@@ -22,6 +22,7 @@ public class Messages_Test {
      */
     @Test
     public void checkCreationOfMessages() {
+        String messageToSend = "hello world";
         //TODO here we need a helper to get how many banners are shown to the user to make clicks accordingly
         int amountOfPages = 3;
         mainPage.open();
@@ -29,9 +30,13 @@ public class Messages_Test {
         for (int i = 0; i < amountOfPages - 1; i++) {
             mainPage.clickOnNext();
         }
+        mainPage.isSkipVisible(true);
         mainPage.clickOnSkip();
         dialog.close();
-        System.out.println(messagesPage.toString());
+        messagesPage.setMessage(messageToSend);
+        messagesPage.sendMessage();
+        messagesPage.isMessageSend(messageToSend);
+        //WebDriverRunner.getWebDriver().getPageSource()
     }
 
 
